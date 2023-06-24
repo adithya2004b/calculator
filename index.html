@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet'>
+    <style>
+        .flex-container1{
+            display: flex;
+            margin-left: 10px;
+        }
+        .flex-container1 div{
+            margin: 7px;
+        }
+        button{
+            padding:5px;
+
+        }
+        button:focus{
+            background-color: aqua;
+        }
+        button:hover{
+            background-color: cornflowerblue;
+        }
+        .cal{
+            margin-left: 650px;
+            margin-top: 50px;
+            border:2px solid black;
+            border-radius: 10px;
+            position: absolute;
+            padding: 30px;
+            background-color: antiquewhite;
+        }
+        .header{
+            background-color: blueviolet;
+            color: white;
+            padding: 20px;
+            }
+        .name{
+            text-align: center;
+            
+            font-family:'Pacifico';
+        }
+    </style>
+</head>
+<body>
+    <div class="header"><h1 class="name">Calculator</h1></div>
+    <div class="cal">
+    <table>
+    <tr><th><label >Display Box</label></th></tr><br>
+    <tr><td><input type="text" id="display" class="displaybox"></td></tr>
+    </table>
+    <div class="flex-container1">
+    <div><button onclick="append(value)" value="7">7</button></div>
+    <div><button onclick="append(value)" value="8">8</button></div>
+    <div><button onclick="append(value)" value="9">9</button></div>
+   <div> <button onclick="append(value)" value="*">*</button></div>
+    </div>
+
+    <div class="flex-container1">
+        <div><button onclick="append(value)" value="4">4</button></div>
+        <div><button onclick="append(value)" value="5">5</button></div>
+        <div><button onclick="append(value)" value="6">6</button></div>
+       <div> <button onclick="append(value)" value="-">-</button></div>
+        </div>
+
+        <div class="flex-container1">
+            <div><button onclick="append(value)" value="1">0</button></div>
+            <div><button onclick="append(value)" value="2">1</button></div>
+            <div><button onclick="append(value)" value="3">2</button></div>
+           <div> <button onclick="append(value)" value="+">+</button></div>
+            </div>
+
+            <div class="flex-container1">
+                <div><button onclick="append(value)" value="%">%</button></div>
+                <div><button onclick="append(value)" value="0">0</button></div>
+                <div><button onclick="append(value)" value=".">.</button></div>
+               <div> <button onclick="calculate()" >=</button></div>
+                </div><br>
+
+
+
+
+
+
+
+
+    
+        <div style="margin-left: 50px;"> <button onclick="reset()">Reset</button>
+        </div>
+
+      <script>
+        function reset(){
+            document.getElementById("display").value="";
+
+        }
+        function append(num){
+            document.getElementById("display").value+=num;
+
+        }
+        function calculate(){
+            
+            var result=eval(document.getElementById("display").value);
+            document.getElementById("display").value=result;
+        }
+      </script>
+</body>
+</html>
